@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row row-cols-3">
+    <div class="col" *ngFor="let planet of planets">
+      <div class="card shadow-sm film-card">
+        <img [src]="planet.image" class="card-img-top film-image" alt="Planet Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ planet.name }}</h5>
+          <p class="card-text"><strong>Population:</strong> {{ planet.population }}</p>
+          <p class="card-text"><strong>Climate:</strong> {{ planet.climate }}</p>
+          <p class="card-text"><strong>Terrain:</strong> {{ planet.terrain }}</p>
+          <p class="card-text"><strong>Gravity:</strong> {{ planet.gravity }} </p>
+          <p class="card-text"><strong>Surface Water:</strong> {{ planet.surface_water }}%</p>
+          <p class="card-text"><strong>Orbital Period:</strong> {{ planet.orbital_period }}</p>
+          <p class="card-text"><strong>Rotation Period:</strong> {{ planet.rotation_period }}</p>
+          <button class="btn btn-dark" (click)="toggleResidents(planet)">
+            {{ planet.showResidents ? 'Hide Resident Names' : 'Show Resident Names' }}
+          </button>
+          <ul *ngIf="planet.showResidents">
+            <li *ngFor="let resident of planet.residents">{{ resident }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

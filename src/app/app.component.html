@@ -1,0 +1,45 @@
+<div class="page">
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img
+          class="logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1388px-Star_Wars_Logo.svg.png"
+          width="150"
+          height="70"
+        />
+      </a>
+    </div>
+  </nav>
+  <div class="wrapper">
+    <nav id="sidebar">
+      <ul class="list-unstyled components">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a routerLink="/films">Films</a>
+        </li>
+        <li>
+          <a routerLink="/people">People</a>
+        </li>
+        <li>
+          <a routerLink="/planets">Planets</a>
+        </li>
+        <li>
+          <a routerLink="/species">Species</a>
+        </li>
+        <li>
+          <a routerLink="/starships">Starships</a>
+        </li>
+        <li>
+          <a routerLink="/vehicles">Vehicles</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    
+      <router-outlet></router-outlet>
+    </div>
+  </div>

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row row-cols-3">
+    <div class="col" *ngFor="let vehicle of vehicles">
+      <div class="card shadow-sm film-card">
+        <img [src]="vehicle.image" class="card-img-top film-image" alt="Film Poster">
+        <div class="card-body">
+          <h5 class="card-title">{{ vehicle.name }}</h5>
+          <p class="card-text"><strong>Model:</strong> {{ vehicle.model }}</p>
+          <p class="card-text"><strong>Class:</strong> {{ vehicle.vehicle_class }}</p>
+          <p class="card-text"><strong>Manufacturer:</strong> {{ vehicle.manufacturer }}</p>
+          <p class="card-text"><strong>Number of Crew Members:</strong> {{ vehicle.crew }}</p>
+          <p class="card-text"><strong>Passenger Capacity:</strong> {{ vehicle.passengers }}</p>
+          <p class="card-text"><strong>Length:</strong> {{ vehicle.length }} meters</p>
+          <p class="card-text"><strong>Maximum Speed:</strong> {{ vehicle.max_atmosphering_speed }} kph</p>
+          <button class="btn btn-dark" (click)="toggleVehicleFilms(vehicle)">
+            {{ vehicle.showFilms ? 'Hide Film Names' : 'Show Film Names' }}
+          </button>
+          <ul *ngIf="vehicle.showFilms">
+            <li *ngFor="let film of vehicle.films">{{ film }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

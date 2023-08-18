@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row row-cols-3">
+    <div class="col" *ngFor="let film of films">
+      <div class="card shadow-sm film-card">
+        <img [src]="film.image" class="card-img-top film-image" alt="Film Poster">
+        <div class="card-body">
+          <h5 class="card-title">{{ film.title }}</h5>
+          <p class="card-text"><strong>Director:</strong> {{ film.director }}</p>
+          <p class="card-text"><strong>Producer:</strong> {{ film.producer }}</p>
+          <button class="btn btn-dark" (click)="togglePeople(film)">
+            {{ film.showPeople ? 'Hide Character Names' : 'Show Character Names' }}
+          </button>
+          <ul *ngIf="film.showPeople">
+            <li *ngFor="let person of film.people">{{ person }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

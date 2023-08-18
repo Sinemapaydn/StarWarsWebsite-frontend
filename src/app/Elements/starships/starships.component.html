@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row row-cols-3">
+      <div class="col" *ngFor="let starship of starships">
+        <div class="card shadow-sm film-card">
+          <img [src]="starship.image" class="card-img-top film-image" alt="Film Poster">
+          <div class="card-body">
+            <h5 class="card-title">{{ starship.name }}</h5>
+            <p class="card-text"><strong>Model:</strong> {{ starship.model }}</p>
+            <p class="card-text"><strong>Manufacturer:</strong> {{ starship.manufacturer }}</p>
+            <p class="card-text"><strong>Passenger Capacity:</strong> {{ starship.passengers }} </p>
+            <p class="card-text"><strong>Number of Crew Members:</strong> {{ starship.crew }} </p>
+            <p class="card-text"><strong>Speed:</strong> {{ starship.max_atmosphering_speed }}</p>
+            <p class="card-text"><strong>Cost:</strong> {{ starship.cost_in_credits }} </p>
+            <p class="card-text"><strong>Consumables:</strong> {{ starship.consumables }} </p>
+            <p class="card-text"><strong>Length:</strong> {{ starship.length }} </p>
+            <button class="btn btn-dark" (click)="toggleStarshipFilms(starship)">
+              {{ starship.showFilms ? 'Hide Film Names' : 'Show Film Names' }}
+            </button>
+            <ul *ngIf="starship.showFilms">
+              <li *ngFor="let film of starship.films">{{ film }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

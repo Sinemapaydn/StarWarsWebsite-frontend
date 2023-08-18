@@ -1,0 +1,24 @@
+.film-card {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding: 10px;
+  
+}
+
+.film-image {
+  object-fit: cover;
+  height: 380px; 
+  border: 1px solid #090909;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  margin-bottom: 5px;
+}
